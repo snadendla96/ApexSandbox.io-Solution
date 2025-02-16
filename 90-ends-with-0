@@ -3,7 +3,7 @@ public Boolean isEndWithZero(Integer num){
      Boolean isZero=false;
      if((num/100)==0){
          isZero=true;
-     }else{
+     }else if((num/100)!=0){
          isZero=false;
      }
      return isZero;
