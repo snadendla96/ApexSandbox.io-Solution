@@ -2,5 +2,5 @@ public String nameFromEmail(String email) {
     //code here
     String firstName=substringBefore('.');
     String lastName=substringBetween('.');
-    return 
+    return toLowerCase(firstName+''+lastName);
 }
