@@ -4,11 +4,13 @@ public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean p
     Boolean isPassed=false;
     if(passedExam == true && passedAssignments==true && passedProject == true){
         isPassed=true;
-    }else if(passedExam!=true || passedAssignments!=true){
+    }else if(passedExam!=true && passedAssignments!=true){
         isPassed=false;
     }else if(passedExam == true && passedAssignments==true && passedProject != true){
          isPassed=true;
     }else if(passedExam == true && passedAssignments!=true && passedProject == true){
+         isPassed=true;
+    }else if(passedExam != true && passedAssignments==true && passedProject == true){
          isPassed=true;
     }
 
