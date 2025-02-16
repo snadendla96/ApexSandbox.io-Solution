@@ -1,9 +1,10 @@
 public Boolean isEndWithZero(Integer num){
      //code here
      Boolean isZero=false;
-     if((num/100)==0){
+     Integer numbers=Math.mod(num);
+     if((numbers/100)==0){
          isZero=true;
-     }else if((num/100)!=0){
+     }else if((numbers/100)!=0){
          isZero=false;
      }
      return isZero;
