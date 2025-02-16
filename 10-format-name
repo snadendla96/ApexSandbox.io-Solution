@@ -1,5 +1,8 @@
 public String formatName(String firstName, String lastName) {
-   if (firstNameBlank && lastNameBlank) {
+  boolean firstNameBlank = String.isBlank(firstName);
+        boolean lastNameBlank = String.isBlank(lastName);
+
+        if (firstNameBlank && lastNameBlank) {
             return ''; // Both null or empty, return empty string
         } else if (firstNameBlank) {
             return lastName; // First name null or empty, return only last name
