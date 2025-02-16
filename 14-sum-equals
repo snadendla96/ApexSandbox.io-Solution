@@ -2,7 +2,7 @@ public Boolean sumEquals(Integer a, Integer b, Integer c) {
     Boolean valid=false;
     //code here
     Integer total=a+b;
-    if(c == total){
+    if(c == a+b){
         valid=true;
     }else{
         return valid;
