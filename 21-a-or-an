@@ -1,7 +1,13 @@
 public String aOrAn(String word) {
-    char firstChar = word.toLowerCase().charAt(0); // Case-insensitive check
+    if (word == null || word.isEmpty()) {
+            return ""; // Or handle as needed
+    }
 
-    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
+    String firstChar = word.substring(0, 1).toLowerCase(); // Get the first letter
+
+    List<String> vowels = new List<String>{'a', 'e', 'i', 'o', 'u'};
+
+    if (vowels.contains(firstChar)) {
         return 'an ' + word;
     } else {
         return 'a ' + word;
