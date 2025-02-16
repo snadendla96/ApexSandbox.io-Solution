@@ -3,5 +3,5 @@ public Decimal computeTip(Decimal total, Integer percent) {
     Integer tipPercent;
     
     tipPercent=total/percent*100;
-    return tipPercent;
+    return Math.round(tipPercent);
 }
