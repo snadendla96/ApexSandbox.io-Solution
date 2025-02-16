@@ -1,8 +1,8 @@
 public String formatName(String firstName, String lastName) {
     //code here
-    String formatedName;
-    if(firstName!=null || lastName!=null){
-        formatedName=firstName+ '' +lastName;
+    if (String.isBlank(firstName) || String.isBlank(lastName)) {
+        return null; // Or handle as needed (empty string, exception, etc.)
+    } else {
+        return firstName + ' ' + lastName; // Concatenate with a space
     }
-    return formatedName;
 }
