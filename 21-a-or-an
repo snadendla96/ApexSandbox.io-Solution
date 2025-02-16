@@ -1,13 +1,13 @@
 public String aOrAn(String word) {
-    //code here
-    String statment;
-    String lowecaseword=word.tolowerCase();
-    if(lowecaseword.startsWith('a') || lowecaseword.startsWith('e')
-       lowecaseword.startsWith('i') || lowecaseword.startsWith('o') ||
-       lowecaseword.startsWith('u')){
-       statment='an'+word;
-    }else{
-        statment='a'+word;
+    if (word == null || word.isEmpty()) {
+                return ""; // Or handle this case differently, like throwing an exception
     }
-    return statment;
+
+    char firstChar = word.toLowerCase().charAt(0); // Case-insensitive check
+
+    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
+        return 'an ' + word;
+    } else {
+        return 'a ' + word;
+    }
 }
