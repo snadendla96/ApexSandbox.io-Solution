@@ -1,12 +1,10 @@
 public String aOrAn(String word) {
 
-    String firstChar = word.substring(0, 1).toLowerCase(); // Get the first letter
+   String lowerWord = word.toLowerCase();
 
-    List<String> vowels = new List<String>{'a', 'e', 'i', 'o', 'u'};
-
-    if (vowels.contains(firstChar)) {
-        return 'an ' + word;
-    } else {
-        return 'a ' + word;
-    }
+        if (lowerWord.startsWith('a') || lowerWord.startsWith('e') || lowerWord.startsWith('i') || lowerWord.startsWith('o') || lowerWord.startsWith('u')) {
+            return 'an ' + word;
+        } else {
+            return 'a ' + word;
+        }
 }
