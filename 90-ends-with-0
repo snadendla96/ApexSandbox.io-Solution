@@ -1,0 +1,8 @@
+public Boolean isEndWithZero(Integer num){
+     //code here
+     if(num/100=0){
+         return true;
+     }else{
+         return false;
+     }
+}
