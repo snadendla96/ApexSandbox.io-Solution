@@ -1,7 +1,13 @@
 public Boolean isPrime(Integer num) {
     //code here
-     Integer limit = (Integer) Math.sqrt(num);
-   for (Integer i = 2; i <= limit; i++) {
+if (num == null || num <= 1) {  // Handle invalid input (null or <= 1)
+            return null; // Or throw an exception, or return false, as needed
+        }
+
+        // Optimization: Check divisibility only up to the square root of num
+        Integer limit = (Integer) Math.sqrt(num);
+
+        for (Integer i = 2; i <= limit; i++) {
             if (Math.mod(num, i) == 0) {
                 return false; // Found a divisor, not prime
             }
@@ -9,5 +15,4 @@ public Boolean isPrime(Integer num) {
 
         return true; // No divisors found, it's prime
     }
-
 }
