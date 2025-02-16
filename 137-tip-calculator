@@ -1,9 +1,9 @@
 public Decimal computeTip(Decimal total, Integer percent) {
-   if (totalBill == null || tipPercentage == null || tipPercentage < 0 || tipPercentage > 100) {
+   if (total == null || percent == null || percent < 0 || percent > 100) {
             return null; // Or throw an exception, or return 0, depending on requirements
         }
 
-        Double tipAmount = (totalBill * tipPercentage) / 100.0; // Use 100.0 for double division
+        Double tipAmount = (total * percent) / 100.0; // Use 100.0 for double division
 
         return tipAmount;
 }
