@@ -1,0 +1,12 @@
+public Boolean isTeenager(Integer age) {
+    //code here
+    Boolean teenager=false;
+    System.debug('age'+age);
+    if(age >=13 && age<=19){
+        teenager=true;
+    }else{
+        teenager=false;
+    }
+    return teenager;
+
+}
