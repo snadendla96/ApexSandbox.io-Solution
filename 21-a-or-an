@@ -1,6 +1,6 @@
 public String aOrAn(String word) {
     //code here
-    if(word.startsWith('a','e','i','o','u')){
+    if(word.startsWith('a')){
         System.debug('an'+word);
     }else{
         System.debug('a'+word);
