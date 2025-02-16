@@ -1,8 +1,10 @@
 public String aOrAn(String word) {
     //code here
+    String statment;
     if(word.startsWith('a')){
-        System.debug('an'+word);
+       statment='an'+word;
     }else{
-        System.debug('a'+word);
+        statment='a'+word;
     }
+    return statment;
 }
