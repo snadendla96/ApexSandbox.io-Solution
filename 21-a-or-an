@@ -1,7 +1,10 @@
 public String aOrAn(String word) {
     //code here
     String statment;
-    if(word.startsWith('a')){
+    String lowecaseword=word.tolowerCase();
+    if(lowecaseword.startsWith('a') || lowecaseword.startsWith('e')
+       lowecaseword.startsWith('i') || lowecaseword.startsWith('o') ||
+       lowecaseword.startsWith('u')){
        statment='an'+word;
     }else{
         statment='a'+word;
