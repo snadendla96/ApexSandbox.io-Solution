@@ -1,14 +1,10 @@
 public String whichTwo(Integer a, Integer b, Integer c) {
     //code here
-    //a 100 
-    //b 50
-    //c 150
-    
     if(a==b+c){
         return a;
-    }else if(c=a+b){
+    }else if(c==a+b){
         return c;
-    }else if(b=a+c){
+    }else if(b==a+c){
         return b;
     }
 }
