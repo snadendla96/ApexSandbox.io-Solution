@@ -1,7 +1,8 @@
 public Boolean sumEquals(Integer a, Integer b, Integer c) {
     Boolean valid=false;
     //code here
-    if(c==a+b){
+    Integer total=a+b;
+    if(c == total){
         valid=true;
     }else{
         return valid;
