@@ -3,7 +3,7 @@ public String formatName(String firstName, String lastName) {
         if (String.isBlank(firstName) || String.isBlank(lastName)) {
         return null; // Or handle as needed (empty string, exception, etc.)
     } else {
-        return firstName + ' ' + lastName; // Concatenate with a space
+        return lastName + ' ' + firstName; // Concatenate with a space
     }
     
 }
