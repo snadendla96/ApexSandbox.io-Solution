@@ -7,6 +7,8 @@ public String whichTwo(Integer a, Integer b, Integer c) {
         result='c';
     }else if(b==a+c){
         result='b';
+    }else{
+          result='';
     }
     return result;
 }
