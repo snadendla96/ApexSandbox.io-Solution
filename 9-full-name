@@ -2,7 +2,7 @@ public String formatName(String firstName, String lastName) {
     //code here
     String formatedName;
     if(firstName!=null || lastName!=null){
-        formatedName=firstName+ " " +lastName;
+        formatedName=firstName+ '' +lastName;
     }
     return formatedName;
 }
