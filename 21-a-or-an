@@ -1,8 +1,4 @@
 public String aOrAn(String word) {
-    if (word == null || word.isEmpty()) {
-                return ''; // Or handle this case differently, like throwing an exception
-    }
-
     char firstChar = word.toLowerCase().charAt(0); // Case-insensitive check
 
     if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
