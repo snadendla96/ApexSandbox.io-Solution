@@ -1,0 +1,12 @@
+public Boolean ascendingOrder(Integer a, Integer b, Integer c) {
+    //code here
+    Boolean isAscendingOrder=false;
+    List<Integer> sorttheNubmer=List<Integer>();
+    sorttheNubmer.add(new List<Integer>{a,b,c});
+    if(sort.sorttheNubmer()){
+        isAscendingOrder=true;
+    }else{
+        isAscendingOrder=false;
+    }
+    return isAscendingOrder;
+}
