@@ -8,7 +8,7 @@ public static Integer findLargest(Integer num1, Integer num2, Integer num3) {
          highestNumber=num2;
     }else if(num3>num1 && num3>num2){
          highestNumber=num3;
-    }else if(num3==0 && num2==0 && num1==0){
+    }else(num3==0 && num2==0 && num1==0){
         highestNumber=0;
     }
     return 0;
