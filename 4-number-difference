@@ -7,7 +7,7 @@ public Integer diff(Integer a, Integer b) {
     }else if(b>a){
         System.debug('b is bigger'+b);
         diff= b - a;
-    }else if(a=0 && b=0){
+    }else if(a==0 && b==0){
         diff = 0;
     }
     return diff;
