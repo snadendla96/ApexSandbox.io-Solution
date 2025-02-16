@@ -1,7 +1,9 @@
 public Decimal computeTip(Decimal total, Integer percent) {
-    //code here
-    Integer tipPercent;
-    
-    tipPercent=total/percent*100;
-    return Math.round(tipPercent);
+   if (totalBill == null || tipPercentage == null || tipPercentage < 0 || tipPercentage > 100) {
+            return null; // Or throw an exception, or return 0, depending on requirements
+        }
+
+        Double tipAmount = (totalBill * tipPercentage) / 100.0; // Use 100.0 for double division
+
+        return tipAmount;
 }
