@@ -1,0 +1,7 @@
+public Decimal computeTip(Decimal total, Integer percent) {
+    //code here
+    Integer tipPercent;
+    Decimal totalBill;
+
+    tipPercent=total/percent*100;
+}
