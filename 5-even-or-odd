@@ -1,0 +1,11 @@
+public String evenOrOdd(Integer num) {
+    //code here
+    String evenOrOdd;
+    
+    if(Math.mod(num,2) == 0){
+        evenOrOdd = 'even';
+    }else{
+        evenOrOdd = 'odd';
+    }
+    return evenOrOdd;
+}
