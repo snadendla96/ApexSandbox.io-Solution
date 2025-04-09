@@ -5,9 +5,10 @@ public String nameFromEmail(String email) {
    String finalName=firstname+' '+lastname;
    String finalString;
     if(!finalName.isAllLowerCase()){
-         finalString=firstname.toLowerCase()+' '+lastname.toLowerCase();
+         finalString=firstname.capitalize()+' '+lastname.capitalize();
     }else{
          finalString=firstname.toLowerCase()+' '+lastname.toLowerCase();
+         finalString=finalString.capitalize()+' '+finalString.capitalize();
     }
     return finalString;
    
