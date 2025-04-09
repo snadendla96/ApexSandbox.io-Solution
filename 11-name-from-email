@@ -1,12 +1,13 @@
 public String nameFromEmail(String email) {
- String fullName=email.substringBefore('@');
-   String firstname=fullName.substringBefore('.');
-   String lastname=fullName.substringAfter('.');
-   String finalName=firstname+' '+lastname;
-   String finalString;
-    if(!finalName.isAllLowerCase()){
-         finalString=firstname.capitalize()+' '+lastname.capitalize();
-    }
+    String fullName = email.substringBefore('@');
+    String firstname = fullName.substringBefore('.');
+    String lastname = fullName.substringAfter('.');
+    String finalName = firstname + ' ' + lastname;
+    String finalString;
+
+    String capitalizedFirstName = firstname.substring(0, 1).toUpperCase() + firstname.substring(1).toLowerCase();
+    String capitalizedLastName = lastname.substring(0, 1).toUpperCase() + lastname.substring(1).toLowerCase();
+    finalString = capitalizedFirstName + ' ' + capitalizedLastName;
+
     return finalString;
-   
 }
