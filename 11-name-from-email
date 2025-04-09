@@ -4,7 +4,7 @@ public String nameFromEmail(String email) {
    String lastname=fullName.substringAfter('.');
    String finalName=firstname+' '+lastname;
    String finalString;
-    if(finalName.isAllLowerCase()){
+    if(!finalName.isAllLowerCase()){
          finalString=firstname.capitalize()+' '+lastname.capitalize();
     }else{
    		  finalString=firstname.toLowerCase()+' '+lastname.toLowerCase();
