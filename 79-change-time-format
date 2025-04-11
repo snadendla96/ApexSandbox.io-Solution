@@ -1,0 +1,24 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+    //0 to 12 means same 
+    //13:23 means converte them
+      //code here
+    //0 to 12 means same 
+    //13:23 means converte them
+  String inputTime='12:05';
+  String hour=inputTime.substringBefore(':');
+  String minutes=inputTime.substringAfter(':');
+    String convertedTime;
+        System.debug('****hour***********'+hour);
+    System.debug('****minute***********'+minutes);
+    if(Integer.valueof(hour) >=1 && Integer.valueof(hour) <=12){
+        //Hour will be AM 
+        convertedTime=String.valueof(hour)+':'+String.valueof(minutes);	
+        System.debug('****convertedTime*****FOR AM******'+convertedTime);    
+    }else{
+        //Hour will be PM 
+        convertedTime=String.valueof(hour)+':'+String.valueof(minutes);
+    System.debug('****convertedTime*****FOR PM******'+convertedTime); 
+    }
+    return convertedTime;
+}
