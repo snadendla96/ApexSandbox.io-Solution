@@ -1,25 +1,40 @@
 public String changeTimeFormat(String strTime) {
-    if (String.isBlank(strTime)) {
-        return null;
-    }
-    
-    strTime = strTime.trim();
-    
-    try {
-        String hourStr = strTime.substringBefore(':');
-        String minuteStr = strTime.substringAfter(':');
-        Integer hour = Integer.valueOf(hourStr);
-        
-        if (hour < 0 || hour > 23 || Integer.valueOf(minuteStr) > 59) {
-            return null; // Invalid hour or minute
-        }
-        
-        String period = (hour < 12) ? 'AM' : 'PM';
-        Integer hour12 = (hour == 0) ? 12 : (hour > 12 ? hour - 12 : hour);
-        
-        return String.format('%02d:%s %s', new List<Object>{ hour12, minuteStr, period });
-    } catch (Exception e) {
-        System.debug('Error in changeTimeFormat: ' + e.getMessage());
-        return null;
-    }
+    String inputTime = '13:59';
+String hourStr = inputTime.substringBefore(':');
+String minuteStr = inputTime.substringAfter(':');
+
+Integer hour = Integer.valueOf(hourStr);
+Integer minute = Integer.valueOf(minuteStr);
+String convertedTime;
+String period;
+Integer hour12;
+
+// Debug original
+System.debug('****hour***********' + hour);
+System.debug('****minute***********' + minute);
+
+// Determine AM/PM
+if (hour == 0) {
+    hour12 = 12;
+    period = 'AM';
+} else if (hour < 12) {
+    hour12 = hour;
+    period = 'AM';
+} else if (hour == 12) {
+    hour12 = 12;
+    period = 'PM';
+} else {
+    hour12 = hour - 12;
+    period = 'PM';
+}
+
+// Pad the hour and minutes
+String hourFormatted = String.valueOf(hour12).padLeft(2, '0');
+String minuteFormatted = String.valueOf(minute).padLeft(2, '0');
+
+// Final converted time
+convertedTime = hourFormatted + ':' + minuteFormatted + ' ' + period;
+
+System.debug('****convertedTime***********' + convertedTime);
+
 }
