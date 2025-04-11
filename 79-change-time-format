@@ -27,13 +27,9 @@ public String changeTimeFormat(String strTime) {
         period = 'PM';
     }
 
-    // Convert Integer to Decimal for formatting
-    Decimal hourDecimal = Decimal.valueOf(hour12);
-    Decimal minuteDecimal = Decimal.valueOf(minute);
-
-    // Format hour and minute
-    String hourFormatted = String.format('{0,number,00}', new List<Object>{hourDecimal});
-    String minuteFormatted = String.format('{0,number,00}', new List<Object>{minuteDecimal});
+    // Manually pad using simple if
+    String hourFormatted = (hour12 < 10 ? '0' : '') + String.valueOf(hour12);
+    String minuteFormatted = (minute < 10 ? '0' : '') + String.valueOf(minute);
 
     // Final converted time
     convertedTime = hourFormatted + ':' + minuteFormatted + ' ' + period;
