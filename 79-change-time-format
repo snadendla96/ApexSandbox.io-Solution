@@ -13,11 +13,11 @@ public String changeTimeFormat(String strTime) {
     System.debug('****minute***********'+minutes);
     if(Integer.valueof(hour) >=1 && Integer.valueof(hour) <=12){
         //Hour will be AM 
-        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+'AM';	
+        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+' AM';	
         System.debug('****convertedTime*****FOR AM******'+convertedTime);    
     }else{
         //Hour will be PM 
-        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+'PM';
+        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+' PM';
     System.debug('****convertedTime*****FOR PM******'+convertedTime); 
     }
     return convertedTime;
