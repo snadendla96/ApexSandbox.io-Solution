@@ -1,24 +1,31 @@
 public String changeTimeFormat(String strTime) {
-    //code here
-    //0 to 12 means same 
-    //13:23 means converte them
-      //code here
-    //0 to 12 means same 
-    //13:23 means converte them
- 
-  String hour=strTime.substringBefore(':');
-  String minutes=strTime.substringAfter(':');
+    String hourStr = strTime.substringBefore(':');
+    String minuteStr = strTime.substringAfter(':');
+    Integer hour = Integer.valueOf(hourStr);
     String convertedTime;
-    System.debug('****hour***********'+hour);
-    System.debug('****minute***********'+minutes);
-    if(Integer.valueof(hour) >=1 && Integer.valueof(hour) <=11 || (Integer.valueof(hour) < 1 && Integer.valueof(minutes) < 1)){
-        //Hour will be AM 
-        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+' AM';	
-        System.debug('****convertedTime*****FOR AM******'+convertedTime);    
-    }else{
-        //Hour will be PM 
-        convertedTime=String.valueof(hour)+':'+String.valueof(minutes)+' PM';
-    System.debug('****convertedTime*****FOR PM******'+convertedTime); 
+    String period;
+    Integer hour12;
+
+    System.debug('****hour***********' + hourStr);
+    System.debug('****minute***********' + minuteStr);
+
+    if (hour >= 0 && hour < 12) {
+        period = 'AM';
+        if (hour == 0) {
+            hour12 = 12;
+        } else {
+            hour12 = hour;
+        }
+    } else {
+        period = 'PM';
+        if (hour == 12) {
+            hour12 = 12;
+        } else {
+            hour12 = hour - 12;
+        }
     }
+
+    convertedTime = String.format('%02d:%s %s', hour12, minuteStr, period);
+    System.debug('****convertedTime***********' + convertedTime);
     return convertedTime;
 }
