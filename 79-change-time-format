@@ -27,14 +27,18 @@ public String changeTimeFormat(String strTime) {
         period = 'PM';
     }
 
-    // Format hour and minute using String.format
-    String hourFormatted = String.format('{0,number,00}', new List<Object>{hour12});
-    String minuteFormatted = String.format('{0,number,00}', new List<Object>{minute});
+    // Convert Integer to Decimal for formatting
+    Decimal hourDecimal = Decimal.valueOf(hour12);
+    Decimal minuteDecimal = Decimal.valueOf(minute);
+
+    // Format hour and minute
+    String hourFormatted = String.format('{0,number,00}', new List<Object>{hourDecimal});
+    String minuteFormatted = String.format('{0,number,00}', new List<Object>{minuteDecimal});
 
     // Final converted time
     convertedTime = hourFormatted + ':' + minuteFormatted + ' ' + period;
 
     System.debug('****convertedTime***********' + convertedTime);
 
-    return convertedTime; // <-- You forgot return also
+    return convertedTime;
 }
