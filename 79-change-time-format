@@ -1,7 +1,7 @@
 public String changeTimeFormat(String strTime) {
-    String inputTime = '13:59';
-String hourStr = inputTime.substringBefore(':');
-String minuteStr = inputTime.substringAfter(':');
+   
+String hourStr = strTime.substringBefore(':');
+String minuteStr = strTime.substringAfter(':');
 
 Integer hour = Integer.valueOf(hourStr);
 Integer minute = Integer.valueOf(minuteStr);
