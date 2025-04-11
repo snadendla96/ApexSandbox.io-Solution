@@ -1,13 +1,9 @@
 public String changeTimeFormat(String strTime) {
-    String hourStr = strTime.substringBefore(':');
-    String minuteStr = strTime.substringAfter(':');
-    Integer hour = Integer.valueOf(hourStr);
-    String convertedTime;
+    String[] parts = strTime.split(':');
+    Integer hour = Integer.valueOf(parts[0]);
+    String minute = parts[1];
     String period;
     Integer hour12;
-
-    System.debug('****hour***********' + hourStr);
-    System.debug('****minute***********' + minuteStr);
 
     if (hour >= 0 && hour < 12) {
         period = 'AM';
@@ -25,7 +21,56 @@ public String changeTimeFormat(String strTime) {
         }
     }
 
-    convertedTime = String.format('%02d:%s %s', hour12, minuteStr, period);
-    System.debug('****convertedTime***********' + convertedTime);
+    String convertedTime = String.format('%02d:%s %s', new List<Object>{hour12, minute, period});
     return convertedTime;
+}
+
+@isTest
+private class TimeConverterTest {
+    @isTest
+    static void testChangeTimeFormat() {
+        // Test 1
+        String result1 = TimeConverter.changeTimeFormat('08:05');
+        System.assertEquals('08:05 AM', result1, 'Should have converted to 08:05 AM');
+
+        // Test 2
+        String result2 = TimeConverter.changeTimeFormat('12:00');
+        System.assertEquals('12:00 PM', result2, 'Should have converted to 12:00 PM');
+
+        // Test 3
+        String result3 = TimeConverter.changeTimeFormat('00:00');
+        System.assertEquals('12:00 AM', result3, 'Should have converted to 12:00 AM');
+
+        // Test 4
+        String result4 = TimeConverter.changeTimeFormat('13:59');
+        System.assertEquals('01:59 PM', result4, 'Should have converted to 01:59 PM');
+
+        // Test 5
+        String result5 = TimeConverter.changeTimeFormat('18:45');
+        System.assertEquals('06:45 PM', result5, 'Should have converted to 06:45 PM');
+
+        // Test 6
+        String result6 = TimeConverter.changeTimeFormat('00:01');
+        System.assertEquals('12:01 AM', result6, 'Should have converted to 12:01 AM');
+
+        // Test 7
+        String result7 = TimeConverter.changeTimeFormat('12:30');
+        System.assertEquals('12:30 PM', result7, 'Should have converted to 12:30 PM');
+
+        // Test 8
+        String result8 = TimeConverter.changeTimeFormat('00:30');
+        System.assertEquals('12:30 AM', result8, 'Should have converted to 12:30 AM');
+
+        // Test 9
+        String result9 = TimeConverter.changeTimeFormat('23:09');
+        System.assertEquals('11:09 PM', result9, 'Should have converted to 11:09 PM');
+
+        // Test 10
+        String result10 = TimeConverter.changeTimeFormat('01:00');
+        System.assertEquals('01:00 AM', result10, 'Should have converted to 01:00 AM');
+
+        // Test 11
+        String result11 = TimeConverter.changeTimeFormat('10:25');
+        System.assertEquals('10:25 AM', result11, 'Should have converted to 10:25 AM');
+    }
 }
