@@ -1,40 +1,40 @@
 public String changeTimeFormat(String strTime) {
-   
-String hourStr = strTime.substringBefore(':');
-String minuteStr = strTime.substringAfter(':');
+    String hourStr = strTime.substringBefore(':');
+    String minuteStr = strTime.substringAfter(':');
 
-Integer hour = Integer.valueOf(hourStr);
-Integer minute = Integer.valueOf(minuteStr);
-String convertedTime;
-String period;
-Integer hour12;
+    Integer hour = Integer.valueOf(hourStr);
+    Integer minute = Integer.valueOf(minuteStr);
+    String convertedTime;
+    String period;
+    Integer hour12;
 
-// Debug original
-System.debug('****hour***********' + hour);
-System.debug('****minute***********' + minute);
+    // Debug original
+    System.debug('****hour***********' + hour);
+    System.debug('****minute***********' + minute);
 
-// Determine AM/PM
-if (hour == 0) {
-    hour12 = 12;
-    period = 'AM';
-} else if (hour < 12) {
-    hour12 = hour;
-    period = 'AM';
-} else if (hour == 12) {
-    hour12 = 12;
-    period = 'PM';
-} else {
-    hour12 = hour - 12;
-    period = 'PM';
-}
+    // Determine AM/PM
+    if (hour == 0) {
+        hour12 = 12;
+        period = 'AM';
+    } else if (hour < 12) {
+        hour12 = hour;
+        period = 'AM';
+    } else if (hour == 12) {
+        hour12 = 12;
+        period = 'PM';
+    } else {
+        hour12 = hour - 12;
+        period = 'PM';
+    }
 
-// Pad the hour and minutes
-String hourFormatted = String.valueOf(hour12).padLeft(2, '0');
-String minuteFormatted = String.valueOf(minute).padLeft(2, '0');
+    // Format hour and minute using String.format
+    String hourFormatted = String.format('{0,number,00}', new List<Object>{hour12});
+    String minuteFormatted = String.format('{0,number,00}', new List<Object>{minute});
 
-// Final converted time
-convertedTime = hourFormatted + ':' + minuteFormatted + ' ' + period;
+    // Final converted time
+    convertedTime = hourFormatted + ':' + minuteFormatted + ' ' + period;
 
-System.debug('****convertedTime***********' + convertedTime);
+    System.debug('****convertedTime***********' + convertedTime);
 
+    return convertedTime; // <-- You forgot return also
 }
