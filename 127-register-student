@@ -9,7 +9,8 @@ public String registerStudent(String name, String phone, String email) {
 
          insert student;
          List<apxio__Student__c> studentRegistrationNumber=[SELECT apxio__Registration_Number__c from apxio__Student__c where Id=student.Id];
-        return studentRegistrationNumber[0].apxio__Registration_Number__c;
+        String registrationNumber= studentRegistrationNumber[0].apxio__Registration_Number__c;
+        return registrationNumber;
      }catch(Exception ex){
          return null;
      }
