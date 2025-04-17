@@ -11,7 +11,7 @@ public Integer fibonacci(Integer n) {
             Integer secondPreviousNumber = 0;
             Integer fibonacciNumber = 0;
 
-            for (int i = 3; i <= n; i++) {
+            for (integer i = 3; i <= n; i++) {
                 fibonacciNumber = previousNumber + secondPreviousNumber;
                 secondPreviousNumber = previousNumber;
                 previousNumber = fibonacciNumber;
