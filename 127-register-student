@@ -1,0 +1,17 @@
+public String registerStudent(String name, String phone, String email) {
+    // code here
+
+     try{
+         apxio__Student__c  student=new apxio__Student__c();
+         student.Name=name;
+         student.apxio__Phone__c=phone;
+         student.apxio_Email__c=email;
+
+         insert student;
+         return student.apxio__Registration_Number__c;
+
+     }catch(Exception ex){
+         return null;
+     }
+
+}
