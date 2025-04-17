@@ -1,25 +1,10 @@
 public Id insertStudent(String name, String email) {
     // code here
-    
-    if(name!=null && email !=null){
-       
-       apxio__Student__c  student=new apxio__Student__c();
-       student.name=name;
-       student.apxio__Email__c=email;
+    apxio__Student__c student=new apxio__Student__c();
 
-        insert student;
+student.Name='Sri Hari Nadendla';
+student.apxio__Email__c ='snadendla@gmail.com';
 
-        return student.Id;
-    }
-
-
-
-
-
-
-
-
-
-
+insert student;
+return student.Id;
 }
-
