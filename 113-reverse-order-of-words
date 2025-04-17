@@ -1,13 +1,14 @@
 public String reverseWordsInASentence(String sentence){
-    //your flawless code here
-if (sentence == null || sentence.trim().isEmpty()) {
+  if (sentence == null || sentence.trim().isEmpty()) {
         return sentence;
     }
 
-    String[] words = sentence.split("\\s+"); // Split by one or more whitespace characters
+    String[] words = sentence.split("\\s+");
     StringBuilder reversedSentence = new StringBuilder();
 
-    for (String word : words) {
+    // Iterate through the words in reverse order
+    for (Integer i = words.size() - 1; i >= 0; i--) {
+        String word = words[i];
         StringBuilder reversedWord = new StringBuilder(word).reverse();
         reversedSentence.append(reversedWord).append(" ");
     }
