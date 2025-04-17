@@ -13,6 +13,8 @@ public Id insertCourse(String name, String details, Integer credits) {
                    return null;
         }else{
             return course.Id;
+        }else{
+            return null;
         }
             
     
