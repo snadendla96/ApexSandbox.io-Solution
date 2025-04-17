@@ -5,8 +5,8 @@ apxio__Course__c course = new apxio__Course__c();
 course.Name = name;
 course.apxio__Course_Details__c = details;
 
-if (credits == '1' || credits == '2' || credits == '3' || credits == '4') {
-    course.apxio__Credits__c = credits;
+if (String.valueof(credits) == '1' || String.valueof(credits) == '2' || String.valueof(credits) == '3' || String.valueof(credits) == '4') {
+    course.apxio__Credits__c = String.valueof(credits);
     insert course;
 
     if (course.Id == null) {
