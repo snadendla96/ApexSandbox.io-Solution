@@ -5,21 +5,10 @@ apxio__Course__c course = new apxio__Course__c();
 course.Name = name;
 course.apxio__Course_Details__c = details;
 
-if (String.valueof(credits) == '1' || String.valueof(credits) == '2' || String.valueof(credits) == '3' || String.valueof(credits) == '4') {
     course.apxio__Credits__c = String.valueof(credits);
-    insert course;
-
-    if (course.Id == null) {
+    try{
+     insert course;
+    }catch(Exception ex){
         return null;
-    } else {
-        return course.Id;
-    }
-} else {
-    // Handle the case where 'credits' has an invalid value
-    System.debug('ERROR: Invalid value for credits: ' + credits);
-    // You might want to throw an exception or return a specific error value here
-    return null;
-}
-            
-    
+    } 
 }
