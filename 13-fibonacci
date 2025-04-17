@@ -18,7 +18,5 @@ public Integer fibonacci(Integer n) {
             }
             return fibonacciNumber;
         }
-    } else {
-        return null; // Or throw an IllegalArgumentException for non-positive input
     }
 }
