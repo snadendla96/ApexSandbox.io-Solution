@@ -1,0 +1,32 @@
+public Integer nextPrime(Integer num) {
+    // Handle edge cases for numbers less than 2
+    if (num < 2) {
+        return 2;
+    }
+
+    Integer currentNumber = num + 1;
+    while (true) {
+        if (isPrime(currentNumber)) {
+            return currentNumber;
+        }
+        currentNumber++;
+    }
+}
+
+private Boolean isPrime(Integer n) {
+    if (n <= 1) {
+        return false;
+    }
+    if (n <= 3) {
+        return true;
+    }
+    if (n % 2 == 0 || n % 3 == 0) {
+        return false;
+    }
+    for (Integer i = 5; i * i <= n; i = i + 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
