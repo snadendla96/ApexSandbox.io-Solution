@@ -6,8 +6,8 @@ public String registerStudent(String name, String phone, String email) {
          student.apxio__Email__c=email;
      try{
          insert student;
-         List<apxio__Student__c> studentRegistrationNumber= [SELECT apxio__Registration_Number__c from apxio__Student__c where Id:=student.Id];
-        String registrationNumber = studentRegistrationNumber[0].apxio__Registration_Number__c;
+         List<apxio__Student__c> studentRegistrationNumber = [SELECT apxio__Registration_Number__c from apxio__Student__c where Id:=student.Id];
+         String registrationNumber = studentRegistrationNumber[0].apxio__Registration_Number__c;
         return registrationNumber;
      }catch(Exception ex){
          return null;
