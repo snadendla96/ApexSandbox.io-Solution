@@ -1,26 +1,16 @@
 public String registerStudent(String name, String phone, String email) {
     // code here
-    apxio__Student__c student = new apxio__Student__c();
-    student.Name = name;
-    student.apxio__Phone__c = phone;
-    student.apxio__Email__c = email;
-    try {
-        insert student;
-        List<apxio__Student__c> studentRegistrationNumber = [SELECT apxio__Registration_Number__c from apxio__Student__c where Id = :student.Id];
+         apxio__Student__c  student=new apxio__Student__c();
+         student.Name=name;
+         student.apxio__Phone__c=phone;
+         student.apxio__Email__c=email;
+     try{
+         insert student;
+         List<apxio__Student__c> studentRegistrationNumber= [SELECT apxio__Registration_Number__c from apxio__Student__c where Id:=student.Id];
+        String registrationNumber = studentRegistrationNumber[0].apxio__Registration_Number__c;
+        return registrationNumber;
+     }catch(Exception ex){
+         return null;
+     }
 
-        if (!studentRegistrationNumber.isEmpty()) {
-            String registrationNumber = studentRegistrationNumber[0].apxio__Registration_Number__c;
-            return registrationNumber;
-        } else {
-            // This should ideally not happen immediately after insert,
-            // but it's good practice to handle the case.
-            return 'Error: Could not retrieve registration number after insert.';
-        }
-    } catch (Exception ex) {
-        // Consider logging the exception for debugging purposes
-        System.debug('Error registering student: ' + ex.getMessage());
-        return 'Error: Failed to register student. Please contact support.';
-        // Alternatively, you could re-throw the exception:
-        // throw ex;
-    }
 }
