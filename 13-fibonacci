@@ -1,10 +1,24 @@
 public Integer fibonacci(Integer n) {
     //code here
-    if(n>0){
-        Integer givenNumber=n;
-        Integer previousNumber=n-1;
-        Integer fibonacciNumber;
-        
-            
+    //13 means 5+8
+    if (n > 0) {
+        if (n == 1) {
+            return 0; // First Fibonacci number is 0
+        } else if (n == 2) {
+            return 1; // Second Fibonacci number is 1
+        } else {
+            Integer previousNumber = 1;
+            Integer secondPreviousNumber = 0;
+            Integer fibonacciNumber = 0;
+
+            for (int i = 3; i <= n; i++) {
+                fibonacciNumber = previousNumber + secondPreviousNumber;
+                secondPreviousNumber = previousNumber;
+                previousNumber = fibonacciNumber;
+            }
+            return fibonacciNumber;
+        }
+    } else {
+        return null; // Or throw an IllegalArgumentException for non-positive input
     }
 }
