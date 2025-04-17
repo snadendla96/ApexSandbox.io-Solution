@@ -1,3 +1,21 @@
 public String reverseWordsInASentence(String sentence){
     //your flawless code here
+if (sentence == null || sentence.trim().isEmpty()) {
+        return sentence;
+    }
+
+    String[] words = sentence.split("\\s+"); // Split by one or more whitespace characters
+    StringBuilder reversedSentence = new StringBuilder();
+
+    for (String word : words) {
+        StringBuilder reversedWord = new StringBuilder(word).reverse();
+        reversedSentence.append(reversedWord).append(" ");
+    }
+
+    // Remove the trailing space
+    if (reversedSentence.length() > 0) {
+        reversedSentence.deleteCharAt(reversedSentence.length() - 1);
+    }
+
+    return reversedSentence.toString();
 }
