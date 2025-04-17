@@ -1,0 +1,10 @@
+public Integer fibonacci(Integer n) {
+    //code here
+    if(n>0){
+        Integer givenNumber=n;
+        Integer previousNumber=n-1;
+        Integer fibonacciNumber;
+        
+            
+    }
+}
