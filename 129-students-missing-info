@@ -1,7 +1,7 @@
 public List<apxio__Student__c> selectStudentsWithoutContactInfo() {
     // code here
     List<apxio__Student__c> studentsWithoutContactInfo=[SELECT Id,Name,apxio__Phone__c,apxio__Email__c from apxio__Student__c WHERE apxio__Active__c=true
-              and  (apxio__Email__c=Null OR  apxio__Phone__c=NULL)    ];
+              and  (apxio__Email__c=Null OR  apxio__Phone__c=NULL) order by Name asc];
 
               return studentsWithoutContactInfo;
 }
