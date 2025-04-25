@@ -1,6 +1,6 @@
 public List<apxio__Student__c> selectUnreachableStudents() {
     // code here
-    List<apxio__Student__c> unreachableStudents=[SELECT ID,Name as Student Name,apxio__Registration_Number__c,apxio__Phone__c,apxio__Email__c,apxio__Active__c from apxio__Student__c where apxio__Active__c=true and  (apxio__Email__c=null or apxio__Phone__c=null) order by Name asc];
+    List<apxio__Student__c> unreachableStudents=[SELECT ID,Name as Student Name,apxio__Registration_Number__c,apxio__Phone__c,apxio__Email__c,apxio__Active__c from apxio__Student__c where apxio__Active__c=true and  (apxio__Email__c=null OR apxio__Phone__c=null) order by Name asc];
 
      return unreachableStudents;
 
